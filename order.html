@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Now | King's Food</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        KING'S <span>FOOD</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html" class="active">Order</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</nav>
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h1>
+            PLACE YOUR <span>ORDER</span>
+        </h1>
+
+        <p>
+            Fresh food prepared for royalty.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= ORDER CONTAINER ================= -->
+
+<section class="checkout-container">
+
+    <!-- CUSTOMER FORM -->
+
+    <div class="checkout-form">
+
+        <h2>
+            Customer Details
+        </h2>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name">
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number">
+
+        <select
+            id="orderType"
+            onchange="handleOrderType(); updateDeliveryFee();">
+
+            <option>
+                Collection
+            </option>
+
+            <option>
+                Delivery
+            </option>
+
+        </select>
+
+        <!-- DELIVERY AREA -->
+
+        <select
+            id="area"
+            onchange="updateDeliveryFee()"
+            style="display:none">
+
+            <option value="">
+                Select Delivery Area
+            </option>
+
+            <option value="Katlehong">
+                Katlehong
+            </option>
+
+            <option value="Eden Park">
+                Eden Park
+            </option>
+
+            <option value="Thokoza">
+                Thokoza
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+        <!-- ADDRESS -->
+
+        <input
+            type="text"
+            id="address"
+            placeholder="Delivery Address"
+            style="display:none">
+
+        <!-- NOTES -->
+
+        <textarea
+            id="notes"
+            rows="4"
+            placeholder="Additional Instructions (Optional)">
+        </textarea>
+
+        <!-- BUTTON -->
+
+        <button
+            class="btn"
+            onclick="sendOrder()">
+
+            Send Order Via WhatsApp
+
+        </button>
+
+    </div>
+
+    <!-- ORDER SUMMARY -->
+
+    <div class="checkout-summary">
+
+        <h2>
+            Your Order
+        </h2>
+
+        <ul
+            id="cartListOrder"
+            class="cart-list">
+        </ul>
+
+        <div class="summary-box">
+
+            <div class="summary-row">
+
+                <span>
+                    Items Total
+                </span>
+
+                <span>
+                    R<span id="totalOrder">0</span>
+                </span>
+
+            </div>
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery Fee
+                </span>
+
+                <span>
+                    R<span id="deliveryFee">0</span>
+                </span>
+
+            </div>
+
+            <div class="summary-row grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <span>
+                    R<span id="grandTotal">0</span>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DELIVERY INFO ================= -->
+
+<section class="delivery-section-v2">
+
+    <h2>
+        Delivery Information
+    </h2>
+
+    <div class="delivery-grid">
+
+        <div class="delivery-card">
+            🚚 Fast Delivery
+        </div>
+
+        <div class="delivery-card">
+            ⏱ 20–45 Minutes
+        </div>
+
+        <div class="delivery-card">
+            📍 Katlehong
+        </div>
+
+        <div class="delivery-card">
+            📍 Eden Park
+        </div>
+
+        <div class="delivery-card">
+            📍 Thokoza
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ORDER STEPS ================= -->
+
+<section class="order-steps">
+
+    <h2>
+        How Ordering Works
+    </h2>
+
+    <div class="steps-grid">
+
+        <div class="step-card">
+
+            <h3>1</h3>
+
+            <p>
+                Choose your favourite meal.
+            </p>
+
+        </div>
+
+        <div class="step-card">
+
+            <h3>2</h3>
+
+            <p>
+                Fill in your details.
+            </p>
+
+        </div>
+
+        <div class="step-card">
+
+            <h3>3</h3>
+
+            <p>
+                Send your order via WhatsApp.
+            </p>
+
+        </div>
+
+        <div class="step-card">
+
+            <h3>4</h3>
+
+            <p>
+                Receive your food and enjoy.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        King's Food — Kasi Royalty
+    </h2>
+
+    <p>
+        Fresh. Fast. Affordable.
+    </p>
+
+</section>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+href="https://wa.me/27682357221"
+target="_blank"
+class="whatsapp-btn">
+
+    WhatsApp
+
+</a>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 King's Food • Palmridge, Katlehong
+    </p>
+
+</footer>
+
+</body>
+</html>
