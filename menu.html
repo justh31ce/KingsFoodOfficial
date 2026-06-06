@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu | King's Food</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        KING'S <span>FOOD</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="order.html">Order</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</nav>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+
+</div>
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h1>OUR <span>MENU</span></h1>
+
+        <p>
+            Freshly prepared kasi favourites made for royalty.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="menu-search-section">
+
+    <input
+        type="text"
+        id="menuSearch"
+        placeholder="Search menu..."
+        onkeyup="searchMenu()">
+
+</section>
+
+<!-- FILTERS -->
+
+<section class="menu-filters">
+
+    <button onclick="filterMenu('all')" class="filter-btn active-filter">
+        All
+    </button>
+
+    <button onclick="filterMenu('kota')" class="filter-btn">
+        Kotas
+    </button>
+
+    <button onclick="filterMenu('dagwood')" class="filter-btn">
+        Dagwoods
+    </button>
+
+    <button onclick="filterMenu('chips')" class="filter-btn">
+        Chips
+    </button>
+
+</section>
+
+<!-- FEATURED SPECIAL -->
+
+<section class="special-banner">
+
+    <div class="special-content">
+
+        <h2>🔥 Featured Special</h2>
+
+        <h3>King's Tower</h3>
+
+        <p>
+            One of our most popular and biggest kotas.
+        </p>
+
+        <button
+            class="btn"
+            onclick="addItem('Kings Tower',55)">
+            Add To Cart
+        </button>
+
+    </div>
+
+</section>
+
+<!-- MENU SECTION -->
+
+<section class="menu-container">
+
+    <!-- FOOD GRID -->
+
+    <div class="food-menu-grid">
+
+        <!-- KOTAS -->
+
+        <div class="food-card kota">
+
+            <h3>Chips, Russian & Polony</h3>
+
+            <p>Classic kasi favourite.</p>
+
+            <h4>R20</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Chips, Russian & Polony',20)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card kota">
+
+            <h3>Cheese Kota</h3>
+
+            <p>Russian, Polony and Cheese.</p>
+
+            <h4>R25</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Cheese Kota',25)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card kota">
+
+            <h3>King's Tower</h3>
+
+            <p>Loaded premium kota.</p>
+
+            <h4>R55</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Kings Tower',55)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card kota">
+
+            <h3>King's Cruiser</h3>
+
+            <p>Ultimate kota challenge.</p>
+
+            <h4>R100</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Kings Cruiser',100)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <!-- DAGWOODS -->
+
+        <div class="food-card dagwood">
+
+            <h3>Classic Dagwood</h3>
+
+            <p>Lettuce, Tomato & Patty.</p>
+
+            <h4>R15</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Classic Dagwood',15)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card dagwood">
+
+            <h3>Cheese Dagwood</h3>
+
+            <p>Patty and Cheese.</p>
+
+            <h4>R20</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Cheese Dagwood',20)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card dagwood">
+
+            <h3>Royal Dagwood</h3>
+
+            <p>Loaded with extras.</p>
+
+            <h4>R37</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Royal Dagwood',37)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card dagwood">
+
+            <h3>Mega Dagwood</h3>
+
+            <p>Double patties and more.</p>
+
+            <h4>R65</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Mega Dagwood',65)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <!-- CHIPS -->
+
+        <div class="food-card chips">
+
+            <h3>Small Chips</h3>
+
+            <h4>R20</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Small Chips',20)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card chips">
+
+            <h3>Medium Chips</h3>
+
+            <h4>R25</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Medium Chips',25)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card chips">
+
+            <h3>Large Chips</h3>
+
+            <h4>R35</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Large Chips',35)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <div class="food-card chips">
+
+            <h3>Family Pack</h3>
+
+            <h4>R40</h4>
+
+            <button
+                class="btn"
+                onclick="addItem('Family Pack',40)">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CART -->
+
+    <aside class="modern-cart">
+
+        <h2>Your Order</h2>
+
+        <ul id="cartList" class="cart-list"></ul>
+
+        <div class="cart-footer">
+
+            <p>
+                Total:
+                <span id="total">0</span>
+            </p>
+
+            <button
+                class="btn"
+                onclick="clearCart()">
+                Clear Cart
+            </button>
+
+            <a
+                href="order.html"
+                class="btn secondary-btn">
+                Checkout
+            </a>
+
+        </div>
+
+    </aside>
+
+</section>
+
+<!-- DELIVERY INFO -->
+
+<section class="delivery-info">
+
+    <div class="delivery-card">
+        🚚 Delivery Available
+    </div>
+
+    <div class="delivery-card">
+        📍 Katlehong
+    </div>
+
+    <div class="delivery-card">
+        📍 Eden Park
+    </div>
+
+    <div class="delivery-card">
+        📍 Thokoza
+    </div>
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/27682357221"
+target="_blank"
+class="whatsapp-btn">
+
+    WhatsApp
+
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 King's Food • Palmridge, Katlehong
+    </p>
+
+</footer>
+
+</body>
+</html>
