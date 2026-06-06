@@ -1,0 +1,1925 @@
+/* ===================================================
+   KING'S FOOD V2
+   FOUNDATION / NAVBAR / HERO
+=================================================== */
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================================
+   VARIABLES
+=================================================== */
+
+:root{
+
+    --gold:#d4af37;
+    --gold-light:#f5d76e;
+    --black:#050505;
+    --dark:#101010;
+    --card:#141414;
+    --white:#ffffff;
+    --text:#d6d6d6;
+
+    --shadow:
+    0 0 15px rgba(212,175,55,.25);
+
+    --shadow-hover:
+    0 0 25px rgba(212,175,55,.55);
+
+    --radius:16px;
+
+}
+
+/* ===================================================
+   RESET
+=================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--black);
+
+    color:var(--white);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    cursor:pointer;
+    font-family:inherit;
+}
+
+section{
+    padding:100px 8%;
+}
+
+/* ===================================================
+   CUSTOM SCROLLBAR
+=================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#000;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+    border-radius:50px;
+}
+
+/* ===================================================
+   GLOBAL TITLES
+=================================================== */
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-heading h2{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:4rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+}
+
+.section-heading span{
+
+    color:var(--gold);
+
+}
+
+.section-heading p{
+
+    color:var(--text);
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ===================================================
+   NAVBAR
+=================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:85px;
+
+    background:rgba(0,0,0,.92);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 8%;
+
+    z-index:9999;
+
+    border-bottom:1px solid rgba(212,175,55,.3);
+
+}
+
+.logo{
+
+    font-family:'Bebas Neue';
+
+    font-size:2.4rem;
+
+    letter-spacing:2px;
+
+}
+
+.logo span{
+
+    color:var(--gold);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--gold);
+
+}
+
+.nav-links a.active{
+
+    color:var(--gold);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-6px;
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===================================================
+   HAMBURGER
+=================================================== */
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    background:none;
+
+    border:none;
+
+}
+
+.hamburger span{
+
+    width:28px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+/* ===================================================
+   MOBILE MENU
+=================================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:85px;
+
+    right:-100%;
+
+    width:280px;
+
+    height:100vh;
+
+    background:#000;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    transition:.4s;
+
+    z-index:999;
+
+    border-left:1px solid var(--gold);
+
+}
+
+.mobile-menu.active{
+
+    right:0;
+
+}
+
+.mobile-menu a{
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+}
+
+.mobile-menu a:hover{
+
+    color:var(--gold);
+
+}
+
+/* ===================================================
+   HERO SECTION
+=================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.72),
+    rgba(0,0,0,.82)
+    ),
+    url("jj.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+}
+
+.hero-content h1{
+
+    font-family:'Bebas Neue';
+
+    font-size:7rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:10px;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero-content h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.hero-content h2 span{
+
+    color:var(--gold);
+
+}
+
+.hero-content p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#e0e0e0;
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+    animation:fadeUp 1.4s ease;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+.btn{
+
+    background:var(--gold);
+
+    color:#000;
+
+    border:none;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.secondary-btn{
+
+    background:transparent;
+
+    color:var(--gold);
+
+    border:2px solid var(--gold);
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--gold);
+
+    color:#000;
+
+}
+
+/* ===================================================
+   PAGE HERO
+=================================================== */
+
+.page-hero{
+
+    margin-top:85px;
+
+    padding:120px 8%;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.82),
+    rgba(0,0,0,.82)
+    ),
+    url("jj.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.page-hero h1{
+
+    font-family:'Bebas Neue';
+
+    font-size:5rem;
+
+    letter-spacing:3px;
+
+}
+
+.page-hero span{
+
+    color:var(--gold);
+
+}
+
+.page-hero p{
+
+    margin-top:15px;
+
+    color:var(--text);
+
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/* ===================================================
+   STATS SECTION
+=================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    background:#080808;
+
+}
+
+.stat-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:var(--radius);
+
+    border:1px solid rgba(212,175,55,.15);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.stat-card h3{
+
+    font-size:2.5rem;
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+    font-family:'Bebas Neue';
+
+}
+
+.stat-card p{
+
+    color:var(--text);
+
+}
+
+/* ===================================================
+   FEATURED FOODS
+=================================================== */
+
+.featured{
+
+    background:#050505;
+
+}
+
+.food-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.food-card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    border:1px solid rgba(212,175,55,.15);
+
+}
+
+.food-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.food-card img{
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+.food-content{
+
+    padding:25px;
+
+}
+
+.food-content h3{
+
+    font-family:'Bebas Neue';
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+}
+
+.food-content p{
+
+    color:var(--text);
+
+    margin-bottom:15px;
+
+}
+
+.food-content h4{
+
+    color:var(--gold);
+
+    font-size:1.3rem;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:var(--gold);
+
+    color:#000;
+
+    font-weight:700;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    margin-bottom:15px;
+
+    font-size:.85rem;
+
+}
+
+/* ===================================================
+   WHY CHOOSE US
+=================================================== */
+
+.why-us{
+
+    background:#090909;
+
+}
+
+.reasons{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.reason-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    transition:.35s;
+
+    font-size:2rem;
+
+}
+
+.reason-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.reason-card h3{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    font-size:1.3rem;
+
+}
+
+.reason-card p{
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+}
+
+/* ===================================================
+   TESTIMONIALS
+=================================================== */
+
+.testimonials{
+
+    background:#050505;
+
+}
+
+.review-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.review-card{
+
+    background:var(--card);
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    border-left:4px solid var(--gold);
+
+    transition:.35s;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.review-card h3{
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+}
+
+.review-card p{
+
+    color:var(--text);
+
+    margin-bottom:15px;
+
+    line-height:1.7;
+
+}
+
+.review-card span{
+
+    font-weight:600;
+
+}
+
+/* ===================================================
+   CALL TO ACTION
+=================================================== */
+
+.cta{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.75)
+    ),
+    url("jj.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.cta h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:25px;
+
+}
+
+.cta p{
+
+    color:var(--text);
+
+    margin-bottom:25px;
+
+}
+
+/* ===================================================
+   ABOUT SECTION
+=================================================== */
+
+.about-section{
+
+    background:#050505;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+.about-text h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+.about-text span{
+
+    color:var(--gold);
+
+}
+
+.about-text p{
+
+    color:var(--text);
+
+    margin-bottom:20px;
+
+    line-height:1.9;
+
+}
+
+.about-image img{
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ===================================================
+   MISSION & VISION
+=================================================== */
+
+.mission-section{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    background:#090909;
+
+}
+
+.mission-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    transition:.35s;
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.mission-card h2{
+
+    margin-bottom:15px;
+
+    color:var(--gold);
+
+}
+
+.mission-card p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+/* ===================================================
+   WHY CUSTOMERS LOVE US
+=================================================== */
+
+.why-about{
+
+    background:#050505;
+
+}
+
+.why-about h2{
+
+    text-align:center;
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:50px;
+
+}
+
+.why-about span{
+
+    color:var(--gold);
+
+}
+
+.love-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.love-card{
+
+    background:var(--card);
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    transition:.35s;
+
+    font-size:2rem;
+
+}
+
+.love-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.love-card h3{
+
+    margin:15px 0;
+
+    font-size:1.2rem;
+
+}
+
+.love-card p{
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+}
+
+/* ===================================================
+   HOURS SECTION
+=================================================== */
+
+.hours-section{
+
+    background:#090909;
+
+    text-align:center;
+
+}
+
+.hours-section h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+
+}
+
+.hours-section span{
+
+    color:var(--gold);
+
+}
+
+.hours-card{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+}
+
+.hour-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ===================================================
+   DELIVERY SECTION
+=================================================== */
+
+.delivery-section{
+
+    background:#050505;
+
+    text-align:center;
+
+}
+
+.delivery-section h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+
+}
+
+.delivery-section span{
+
+    color:var(--gold);
+
+}
+
+.delivery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+
+}
+
+.delivery-card{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.delivery-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ===================================================
+   MAP SECTION
+=================================================== */
+
+.map-section{
+
+    background:#090909;
+
+    text-align:center;
+
+}
+
+.map-section h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:30px;
+
+}
+
+.map-section span{
+
+    color:var(--gold);
+
+}
+
+.map-section iframe{
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ===================================================
+   CONTACT SECTION
+=================================================== */
+
+.contact-section{
+
+    background:#050505;
+
+    text-align:center;
+
+}
+
+.contact-section h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+
+}
+
+.contact-section span{
+
+    color:var(--gold);
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.contact-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    transition:.35s;
+
+    font-size:2rem;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.contact-card h3{
+
+    margin:15px 0;
+
+    font-size:1.2rem;
+
+}
+
+.contact-card p{
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+}
+
+/* ===================================================
+   SOCIAL LINKS
+=================================================== */
+
+.social-section{
+
+    text-align:center;
+
+    background:#090909;
+
+}
+
+.social-section h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:30px;
+
+}
+
+.social-section span{
+
+    color:var(--gold);
+
+}
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    background:var(--card);
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+}
+
+.social-links a:hover{
+
+    background:var(--gold);
+
+    color:#000;
+
+}
+/* ===================================================
+   MENU PAGE
+=================================================== */
+
+.menu-search-section{
+    padding:30px 8%;
+    background:#080808;
+}
+
+#menuSearch{
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:auto;
+    padding:18px 22px;
+    background:var(--card);
+    border:2px solid rgba(212,175,55,.25);
+    border-radius:50px;
+    color:white;
+    font-size:1rem;
+}
+
+#menuSearch:focus{
+    outline:none;
+    border-color:var(--gold);
+    box-shadow:var(--shadow);
+}
+
+.menu-filters{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    padding:20px 8% 40px;
+    background:#080808;
+}
+
+.filter-btn{
+    padding:12px 22px;
+    border:none;
+    border-radius:50px;
+    background:var(--card);
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.active-filter{
+    background:var(--gold);
+    color:black;
+}
+
+/* ===================================================
+   SPECIAL BANNER
+=================================================== */
+
+.special-banner{
+    padding:50px 8%;
+}
+
+.special-content{
+    background:
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.75)
+    ),
+    url("45.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    padding:60px;
+    border-radius:25px;
+
+    text-align:center;
+
+    border:1px solid rgba(212,175,55,.3);
+}
+
+.special-content h2{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.special-content h3{
+    font-family:'Bebas Neue';
+    font-size:3rem;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.special-content p{
+    color:#ddd;
+    margin-bottom:25px;
+}
+
+/* ===================================================
+   MENU LAYOUT
+=================================================== */
+
+.menu-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:35px;
+
+    padding:50px 8%;
+}
+
+.food-menu-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+}
+
+.food-card{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.12);
+
+    transition:.35s;
+}
+
+.food-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+}
+
+.food-card h3{
+
+    font-family:'Bebas Neue';
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.food-card p{
+
+    color:var(--text);
+
+    margin-bottom:15px;
+}
+
+.food-card h4{
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+    font-size:1.4rem;
+}
+
+/* ===================================================
+   MODERN CART
+=================================================== */
+
+.modern-cart{
+
+    position:sticky;
+
+    top:110px;
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    height:fit-content;
+
+    border:1px solid rgba(212,175,55,.2);
+}
+
+.modern-cart h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+}
+
+.cart-list{
+
+    margin-bottom:20px;
+}
+
+.cart-list li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cart-footer p{
+
+    font-weight:700;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.cart-footer .btn{
+
+    width:100%;
+
+    margin-bottom:10px;
+}
+
+/* ===================================================
+   CHECKOUT PAGE
+=================================================== */
+
+.checkout-container{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .9fr;
+
+    gap:35px;
+
+    padding:60px 8%;
+}
+
+.checkout-form,
+.checkout-summary{
+
+    background:var(--card);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.checkout-form h2,
+.checkout-summary h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+}
+
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    background:#0d0d0d;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    color:white;
+
+    border-radius:12px;
+}
+
+.checkout-form textarea{
+
+    resize:vertical;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus{
+
+    outline:none;
+
+    border-color:var(--gold);
+}
+
+.summary-box{
+
+    margin-top:25px;
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.grand-total{
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    color:var(--gold);
+}
+
+/* ===================================================
+   ORDER STEPS
+=================================================== */
+
+.order-steps{
+
+    background:#090909;
+
+    text-align:center;
+}
+
+.order-steps h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+}
+
+.steps-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.step-card{
+
+    background:var(--card);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    transition:.35s;
+}
+
+.step-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+}
+
+.step-card h3{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:black;
+
+    margin-bottom:20px;
+}
+
+/* ===================================================
+   FLOATING WHATSAPP
+=================================================== */
+
+.whatsapp-btn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    z-index:999;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    box-shadow:0 0 15px rgba(0,0,0,.4);
+
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+
+    transform:scale(1.08);
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+footer{
+
+    background:#000;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-top:1px solid rgba(212,175,55,.2);
+}
+
+footer p{
+
+    color:#aaa;
+}
+
+/* ===================================================
+   REVEAL ANIMATION
+=================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE
+=================================================== */
+
+@media(max-width:992px){
+
+    .menu-container,
+    .checkout-container,
+    .about-grid,
+    .mission-section{
+
+        grid-template-columns:1fr;
+    }
+
+    .modern-cart{
+
+        position:relative;
+
+        top:0;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    .hero-content h1{
+        font-size:4rem;
+    }
+
+    .hero-content h2{
+        font-size:2.5rem;
+    }
+
+    .page-hero h1{
+        font-size:3rem;
+    }
+
+    .section-heading h2,
+    .about-text h2,
+    .hours-section h2,
+    .delivery-section h2,
+    .contact-section h2,
+    .order-steps h2,
+    .cta h2{
+        font-size:2.8rem;
+    }
+
+    .special-content{
+        padding:35px 20px;
+    }
+
+    .special-content h3{
+        font-size:2rem;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .food-grid,
+    .food-menu-grid,
+    .review-grid,
+    .delivery-grid,
+    .steps-grid{
+        grid-template-columns:1fr;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .whatsapp-btn{
+        right:15px;
+        bottom:15px;
+        padding:12px 18px;
+    }
+}
