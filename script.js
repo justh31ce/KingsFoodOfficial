@@ -230,7 +230,7 @@ function getDeliveryFee() {
             return 15;
 
         case "Other":
-            return 50;
+            return 22;
 
         default:
             return 0;
