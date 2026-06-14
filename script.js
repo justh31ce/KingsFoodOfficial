@@ -428,7 +428,7 @@ function searchMenu() {
 
 /* ================= FILTER ================= */
 
-function filterMenu(category) {
+function filterMenu(category,event) {
 
     const cards =
     document.querySelectorAll(".food-card");
@@ -437,40 +437,25 @@ function filterMenu(category) {
     document.querySelectorAll(".filter-btn");
 
     buttons.forEach(btn=>{
-
-        btn.classList.remove(
-        "active-filter"
-        );
-
+        btn.classList.remove("active-filter");
     });
 
-    event.target.classList.add(
-    "active-filter"
-    );
+    if(event){
+        event.target.classList.add("active-filter");
+    }
 
     cards.forEach(card=>{
 
         if(category === "all"){
-
-            card.style.display =
-            "block";
-
+            card.style.display = "block";
         }
 
-        else if(
-            card.classList.contains(category)
-        ){
-
-            card.style.display =
-            "block";
-
+        else if(card.classList.contains(category)){
+            card.style.display = "block";
         }
 
         else{
-
-            card.style.display =
-            "none";
-
+            card.style.display = "none";
         }
 
     });
